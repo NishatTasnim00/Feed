@@ -1,20 +1,14 @@
-import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { AiOutlineSend } from 'react-icons/ai';
 
-const CommentSection = ({ id, open }) => {
-const [reload, setReload] = useState(0)
+const CommentSection = ({ id, open, router }) => {
 	// console.log(id);
 	const { register, handleSubmit, setValue, watch, reset } = useForm();
 	const watchComment = watch('comment', '');
 
-useEffect(()=>{
-
-}, [reload])
 
 	const onSubmit = (data) => {
 		if (data.comment.trim() !== '') {
-			// Perform your submit logic here
 			reset();
 		}
 		console.log(data);
@@ -25,7 +19,6 @@ useEffect(()=>{
 				profile_picture:
 					'',
 			},
-
 			comment: data.comment,
 		};
 		console.log(comment);
@@ -37,20 +30,24 @@ useEffect(()=>{
 			},
 			body: JSON.stringify(comment),
 		})
+		
 			.then((res) => {
 				if (!res.ok) {
 					throw new Error('Network response was not ok');
 				}
+				router.push('/')
+				router.refresh()
 				return res.json();
 			})
 			.then((data) => {
-				setReload(!reload)
 				console.log('Received data:', data);
 			})
 			.catch((error) => {
 				console.error('Fetch error:', error);
 			});
+			
 	};
+	
 	return (
 		<div className={`${open ? '' : 'hidden'}`}>
 			<form className="flex relative" onSubmit={handleSubmit(onSubmit)}>

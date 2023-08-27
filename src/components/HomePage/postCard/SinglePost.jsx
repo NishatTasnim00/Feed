@@ -8,11 +8,11 @@ import CommentSection from './CommentSection';
 import EditOption from './EditOption';
 import SingleComment from './SingleComment';
 
-const SinglePost = ({ post }) => {
+const SinglePost = ({ post, router }) => {
 	const [react, setReact] = useState(false);
 	const [open, setOpen] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
-	const { _id } = post;
+	const { _id: id } = post;
 
 	function closeModal() {
 		setIsOpen(false);
@@ -25,15 +25,15 @@ const SinglePost = ({ post }) => {
 	const handleReact = () => {
 		setReact(!react);
 		const reaction = {
-			_id,
+			id,
 			author: {
 				name: '',
 				profile_picture: '',
 			},
-			reaction: 1 
+			reaction: '1',
 		};
-		// console.log(reaction);
-		
+		console.log(reaction);
+
 		fetch('http://localhost:3000/api/posts', {
 			method: 'PATCH',
 			headers: {
@@ -45,7 +45,7 @@ const SinglePost = ({ post }) => {
 				if (!res.ok) {
 					throw new Error('Network response was not ok');
 				}
-
+				router.refresh();
 				return res.json();
 			})
 			.then((data) => {
@@ -54,6 +54,8 @@ const SinglePost = ({ post }) => {
 			.catch((error) => {
 				console.error('Fetch error:', error);
 			});
+
+		router.refresh();
 	};
 
 	return (
@@ -89,18 +91,7 @@ const SinglePost = ({ post }) => {
 				alt="Posted Image"
 				className="object-contain border"
 			/>
-			<div className="flex justify-between px-5 py-3 ">
-				{post.comments.length > 0 && (
-					<div>
-						{post?.comments?.map((comment, i) => (
-							<SingleComment
-								key={i}
-								comment={comment}
-								id={post._id}
-							></SingleComment>
-						))}
-					</div>
-				)}
+			<div className="flex justify-end px-5 py-3 ">
 				<div className="flex gap-3">
 					<BsSave
 						size={26}
@@ -131,9 +122,22 @@ const SinglePost = ({ post }) => {
 						/>
 					)}
 					<p className="font-semibold text-lg">
-						{post?.likes && post?.likes.length}
+						{post?.reactions && post?.reactions.length}
 					</p>
 				</div>
+			</div>
+			<div>
+				{post.comments.length > 0 && (
+					<div>
+						{post?.comments?.map((comment, i) => (
+							<SingleComment
+								key={i}
+								comment={comment}
+								id={post._id}
+							></SingleComment>
+						))}
+					</div>
+				)}
 			</div>
 			<div className="px-5 pb-5 ">
 				<div>
@@ -156,7 +160,11 @@ const SinglePost = ({ post }) => {
 					</p> */}
 				</div>
 				{/* <p className="text-neutral-400 text-base">Add a comment...</p> */}
-				<CommentSection id={post._id} open={open}></CommentSection>
+				<CommentSection
+					id={post._id}
+					open={open}
+					router={router}
+				></CommentSection>
 			</div>
 		</div>
 	);

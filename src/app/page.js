@@ -1,10 +1,10 @@
-import Posts from '@/components/HomePage/feed/Posts';
+import Posts from '@/components/HomePage/postCard/Posts';
 import React from 'react';
 
 const page = () => {
   return (
     <div>
-      <Posts />
+     <Posts />
     </div>
   );
 };

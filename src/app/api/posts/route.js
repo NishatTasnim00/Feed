@@ -16,7 +16,7 @@ export const GET = async () => {
 };
 
 
-export async function PATCH(request) {
+export const PATCH = async (request) =>{
 	try {
 		const { id, comment, reaction } = await request.json();
 

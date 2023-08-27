@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { AiFillHeart, AiOutlineComment, AiOutlineHeart } from 'react-icons/ai';
 import { BsSave, BsThreeDots } from 'react-icons/bs';
 import { PiShareFat } from 'react-icons/pi';
-// import CommentSection from './CommentSection';
+import CommentSection from './CommentSection';
 // import EditOption from './EditOption';
 // import SingleComment from './SingleComment';
 
@@ -156,7 +156,7 @@ const SinglePost = ({ post }) => {
 					</p> */}
 				</div>
 				{/* <p className="text-neutral-400 text-base">Add a comment...</p> */}
-				{/* <CommentSection id={post._id} open={open}></CommentSection> */}
+				<CommentSection id={post._id} open={open}></CommentSection>
 			</div>
 		</div>
 	);

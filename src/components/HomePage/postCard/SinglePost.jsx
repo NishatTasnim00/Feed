@@ -6,7 +6,7 @@ import { BsSave, BsThreeDots } from 'react-icons/bs';
 import { PiShareFat } from 'react-icons/pi';
 import CommentSection from './CommentSection';
 // import EditOption from './EditOption';
-// import SingleComment from './SingleComment';
+import SingleComment from './SingleComment';
 
 const SinglePost = ({ post }) => {
 	const [react, setReact] = useState(false);
@@ -89,7 +89,7 @@ const SinglePost = ({ post }) => {
 				alt="Posted Image"
 				className="object-contain border"
 			/>
-			{/* <div className="flex justify-between px-5 py-3 ">
+			<div className="flex justify-between px-5 py-3 ">
 				{post.comments.length > 0 && (
 					<div>
 						{post?.comments?.map((comment, i) => (
@@ -134,7 +134,7 @@ const SinglePost = ({ post }) => {
 						{post?.likes && post?.likes.length}
 					</p>
 				</div>
-			</div> */}
+			</div>
 			<div className="px-5 pb-5 ">
 				<div>
 					{/* <p>

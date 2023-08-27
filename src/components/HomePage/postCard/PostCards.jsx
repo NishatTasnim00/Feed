@@ -1,3 +1,4 @@
+'use client'
 import SinglePost from './SinglePost';
 import useSWR from 'swr';
 
@@ -11,7 +12,7 @@ import useSWR from 'swr';
 // 	return res.json();
 // }
 
-const Posts =   () => {
+const PostCards =   () => {
 
 	const fetcher = (...args) => fetch(...args).then((res) => res.json());
 	const { data: posts, error, isLoading } = useSWR('/api/posts', fetcher);
@@ -32,4 +33,4 @@ const Posts =   () => {
 	);
 };
 
-export default Posts;
+export default PostCards;

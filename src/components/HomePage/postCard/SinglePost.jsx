@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { AiFillHeart, AiOutlineComment, AiOutlineHeart } from 'react-icons/ai';
 import { BsSave, BsThreeDots } from 'react-icons/bs';
 import { PiShareFat } from 'react-icons/pi';
-import CommentSection from './CommentSection';
-import EditOption from './EditOption';
-import SingleComment from './SingleComment';
+// import CommentSection from './CommentSection';
+// import EditOption from './EditOption';
+// import SingleComment from './SingleComment';
 
 const SinglePost = ({ post }) => {
 	const [react, setReact] = useState(false);
@@ -75,11 +75,11 @@ const SinglePost = ({ post }) => {
 						className="hover:scale-125 duration-300 hover:text-gray-400 hover:cursor-pointer"
 					/>
 				</button>
-				<EditOption
+				{/* <EditOption
 					closeModal={closeModal}
 					openModal={openModal}
 					isOpen={isOpen}
-				></EditOption>
+				></EditOption> */}
 			</div>
 			<h1 className="min-h-64 px-5 py-3">{post?.content}</h1>
 			<Image
@@ -89,7 +89,7 @@ const SinglePost = ({ post }) => {
 				alt="Posted Image"
 				className="object-contain border"
 			/>
-			<div className="flex justify-between px-5 py-3 ">
+			{/* <div className="flex justify-between px-5 py-3 ">
 				{post.comments.length > 0 && (
 					<div>
 						{post?.comments?.map((comment, i) => (
@@ -134,7 +134,7 @@ const SinglePost = ({ post }) => {
 						{post?.likes && post?.likes.length}
 					</p>
 				</div>
-			</div>
+			</div> */}
 			<div className="px-5 pb-5 ">
 				<div>
 					{/* <p>
@@ -156,7 +156,7 @@ const SinglePost = ({ post }) => {
 					</p> */}
 				</div>
 				{/* <p className="text-neutral-400 text-base">Add a comment...</p> */}
-				<CommentSection id={post._id} open={open}></CommentSection>
+				{/* <CommentSection id={post._id} open={open}></CommentSection> */}
 			</div>
 		</div>
 	);

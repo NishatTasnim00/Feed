@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import { revalidateTag } from 'next/cache';
 import { NextResponse } from 'next/server';
 
-export const GET = async (request) => {
+export const GET = async () => {
 	try {
 		await connect();
 		const posts = await Post.find();
@@ -15,25 +15,6 @@ export const GET = async (request) => {
 	}
 };
 
-export async function POST(request) {
-	try {
-		const post = await request.json();
-
-		// Create a new post using the Post model
-		const newPost = new Post({
-			title: post.title,
-			content: post.content,
-		});
-
-		// Save the new post to the database
-		await newPost.save();
-
-		return NextResponse.json(newPost);
-	} catch (error) {
-		console.log(error.name, error.message);
-		return NextResponse.json({ error: error.message });
-	}
-}
 
 export async function PATCH(request) {
 	try {

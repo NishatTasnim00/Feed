@@ -1,4 +1,3 @@
-'use client'
 import SinglePost from './SinglePost';
 import useSWR from 'swr';
 

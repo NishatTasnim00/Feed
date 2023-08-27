@@ -1,6 +1,6 @@
-// 'use client'
+'use client'
 import SinglePost from './SinglePost';
-// import useSWR from 'swr';
+import useSWR from 'swr';
 
 async function getData() {
 	const res = await fetch('http://localhost:3000/api/posts', {
@@ -12,14 +12,14 @@ async function getData() {
 	return res.json();
 }
 
-const PostCards =   async () => {
+const PostCards = () => {
 
-	// const fetcher = (...args) => fetch(...args).then((res) => res.json());
-	// const { data: posts, error, isLoading } = useSWR('/api/posts', fetcher);
-	// if (error) return <div>failed to load</div>;
-	// if (isLoading) return <div>loading...</div>;
+	const fetcher = (...args) => fetch(...args).then((res) => res.json());
+	const { data: posts, error, isLoading } = useSWR('/api/posts', fetcher);
+	if (error) return <div>failed to load</div>;
+	if (isLoading) return <div>loading...</div>;
 
-	const posts = await getData();
+	// const posts = await getData();
 	console.log(posts);
 
 	return (

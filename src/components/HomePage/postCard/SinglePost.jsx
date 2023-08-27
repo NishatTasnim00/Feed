@@ -5,7 +5,7 @@ import { AiFillHeart, AiOutlineComment, AiOutlineHeart } from 'react-icons/ai';
 import { BsSave, BsThreeDots } from 'react-icons/bs';
 import { PiShareFat } from 'react-icons/pi';
 import CommentSection from './CommentSection';
-// import EditOption from './EditOption';
+import EditOption from './EditOption';
 import SingleComment from './SingleComment';
 
 const SinglePost = ({ post }) => {
@@ -75,11 +75,11 @@ const SinglePost = ({ post }) => {
 						className="hover:scale-125 duration-300 hover:text-gray-400 hover:cursor-pointer"
 					/>
 				</button>
-				{/* <EditOption
+				<EditOption
 					closeModal={closeModal}
 					openModal={openModal}
 					isOpen={isOpen}
-				></EditOption> */}
+				></EditOption>
 			</div>
 			<h1 className="min-h-64 px-5 py-3">{post?.content}</h1>
 			<Image

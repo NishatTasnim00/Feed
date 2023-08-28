@@ -38,11 +38,12 @@ export default function MyModal({ openModal, closeModal, isOpen }) {
 										<li className="bg-gray-100 rounded-sm hover:bg-slate-200 py-3 hover:scale-105 duration-300">
 											Add to favorites
 										</li>
+
 										<li className="bg-gray-100 rounded-sm hover:bg-slate-200 py-3 hover:scale-105 duration-300">
 											Copy link
 										</li>
 										<li className="bg-gray-100 rounded-sm hover:bg-slate-200 py-3 hover:scale-105 duration-300">
-											Cancel
+											Delete
 										</li>
 									</ul>
 								</Dialog.Panel>

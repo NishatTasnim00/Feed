@@ -30,7 +30,7 @@ const SinglePost = ({ post, router }) => {
 				name: '',
 				profile_picture: '',
 			},
-			reaction: '1',
+			reaction: 1,
 		};
 		console.log(reaction);
 

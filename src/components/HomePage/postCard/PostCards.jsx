@@ -26,7 +26,7 @@ const router = useRouter();
 	if (isLoading) return <div>loading...</div>;
 
 	// const posts = await getData();
-	console.log(posts);
+	// console.log(posts);
 
 	return (
 		<>

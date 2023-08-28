@@ -21,6 +21,7 @@ const reactionSchema = new Schema(
 			name: String,
 			profile_picture: String,
 		},
+		// reaction: Array
 	},
 	{ timestamps: true }
 );
@@ -33,7 +34,7 @@ const postSchema = new Schema(
 		},
 		content: String,
 		image: String,
-		reaction: [reactionSchema], // Array of user IDs who liked the post
+		reactions: [reactionSchema], // Array of user IDs who liked the post
 		comments: [commentSchema],
 	},
 	{ timestamps: true }

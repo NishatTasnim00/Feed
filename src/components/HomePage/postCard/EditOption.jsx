@@ -62,11 +62,15 @@ export default function MyModal({ id, openModal, closeModal, isOpen }) {
 										<li className="bg-gray-100 rounded-sm hover:bg-slate-200 py-3 hover:scale-105 duration-300 pb-3">
 											Copy link
 										</li>
-										<Link className="" onClick={()=>removePost(id)} href={`/`}>
-											<li className="bg-gray-100 rounded-sm hover:bg-slate-200 py-3 hover:scale-105 duration-300">
+										<li className="bg-gray-100 rounded-sm hover:bg-slate-200 py-3 hover:scale-105 duration-300">
+											<Link
+												className=""
+												onClick={() => removePost(id)}
+												href={`/`}
+											>
 												Delete
-											</li>
-										</Link>
+											</Link>
+										</li>
 									</ul>
 								</Dialog.Panel>
 							</Transition.Child>

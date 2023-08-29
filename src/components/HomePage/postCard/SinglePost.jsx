@@ -13,7 +13,10 @@ const SinglePost = ({ post }) => {
 	const [open, setOpen] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
 	const { _id: id } = post;
-
+	console.log(post.comments);
+	const { comments } = post;
+	console.log(comments)
+	// const comments = comments[]
 	function closeModal() {
 		setIsOpen(false);
 	}
@@ -53,7 +56,6 @@ const SinglePost = ({ post }) => {
 			.catch((error) => {
 				console.error('Fetch error:', error);
 			});
-
 	};
 
 	return (
@@ -125,10 +127,10 @@ const SinglePost = ({ post }) => {
 					</p>
 				</div>
 			</div>
-			<div>
-				{post.comments.length > 0 && (
+			{/* <div>
+				{post.comments.length > 1 && (
 					<div>
-						{post?.comments?.map((comment, i) => (
+						{post?.comments?.reverse().map((comment, i) => (
 							<SingleComment
 								key={i}
 								comment={comment}
@@ -136,6 +138,19 @@ const SinglePost = ({ post }) => {
 							></SingleComment>
 						))}
 					</div>
+				)}
+			</div> */}
+			<div>
+				{post?.comments?.map(
+					(comment, i) =>
+						// Check if the index is greater than or equal to 1
+						i >= 1 && (
+							<SingleComment
+								key={i}
+								comment={comment}
+								id={post._id}
+							></SingleComment>
+						)
 				)}
 			</div>
 			<div className="px-5 pb-5 ">
@@ -159,10 +174,7 @@ const SinglePost = ({ post }) => {
 					</p> */}
 				</div>
 				{/* <p className="text-neutral-400 text-base">Add a comment...</p> */}
-				<CommentSection
-					id={post._id}
-					open={open}
-				></CommentSection>
+				<CommentSection id={post._id} open={open}></CommentSection>
 			</div>
 		</div>
 	);

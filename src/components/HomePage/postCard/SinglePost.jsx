@@ -8,7 +8,7 @@ import CommentSection from './CommentSection';
 import EditOption from './EditOption';
 import SingleComment from './SingleComment';
 
-const SinglePost = ({ post, router }) => {
+const SinglePost = ({ post }) => {
 	const [react, setReact] = useState(false);
 	const [open, setOpen] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
@@ -45,11 +45,9 @@ const SinglePost = ({ post, router }) => {
 				if (!res.ok) {
 					throw new Error('Network response was not ok');
 				}
-				router.refresh();
 				return res.json();
 			})
 			.then((data) => {
-				router.refresh();
 				console.log('Received data:', data);
 			})
 			.catch((error) => {
@@ -57,15 +55,6 @@ const SinglePost = ({ post, router }) => {
 			});
 
 	};
-
-
-
-
-
-
-
-
-
 
 	return (
 		<div data-aos="fade-up" className="lg:px-0 border-2 rounded-md mb-3">
@@ -173,7 +162,6 @@ const SinglePost = ({ post, router }) => {
 				<CommentSection
 					id={post._id}
 					open={open}
-					router={router}
 				></CommentSection>
 			</div>
 		</div>

@@ -1,7 +1,5 @@
 'use client'
-import { useRouter } from 'next/navigation';
 import SinglePost from './SinglePost';
-// import useSWR from 'swr';
 import useSWR from 'swr';
 
 
@@ -18,7 +16,6 @@ import useSWR from 'swr';
 
 
 const PostCards = () => {
-const router = useRouter();
 	const fetcher = (...args) => fetch(...args).then((res) => res.json());
 	const { data: posts, error, isLoading } = useSWR('/api/posts', fetcher,{
 		refreshInterval: 1000
@@ -34,7 +31,7 @@ const router = useRouter();
 		<>
 			<div className="pb-28 pt-12 mx-auto w-full h-screen">
 				{posts && posts?.reverse().map((post) => (
-					<SinglePost key={post._id} post={post} router={router}></SinglePost>
+					<SinglePost key={post._id} post={post} ></SinglePost>
 				))}
 			</div>
 		</>

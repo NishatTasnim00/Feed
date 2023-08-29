@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { AiOutlineSend } from 'react-icons/ai';
 
-const CommentSection = ({ id, open, router }) => {
+const CommentSection = ({ id, open }) => {
 	// console.log(id);
 	const { register, handleSubmit, setValue, watch, reset } = useForm();
 	const watchComment = watch('comment', '');
@@ -35,8 +35,7 @@ const CommentSection = ({ id, open, router }) => {
 				if (!res.ok) {
 					throw new Error('Network response was not ok');
 				}
-				router.push('/')
-				router.refresh()
+				
 				return res.json();
 			})
 			.then((data) => {

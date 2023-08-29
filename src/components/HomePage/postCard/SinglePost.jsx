@@ -49,14 +49,23 @@ const SinglePost = ({ post, router }) => {
 				return res.json();
 			})
 			.then((data) => {
+				router.refresh();
 				console.log('Received data:', data);
 			})
 			.catch((error) => {
 				console.error('Fetch error:', error);
 			});
 
-		router.refresh();
 	};
+
+
+
+
+
+
+
+
+
 
 	return (
 		<div data-aos="fade-up" className="lg:px-0 border-2 rounded-md mb-3">
@@ -78,19 +87,23 @@ const SinglePost = ({ post, router }) => {
 					/>
 				</button>
 				<EditOption
+					id={id}
 					closeModal={closeModal}
 					openModal={openModal}
 					isOpen={isOpen}
 				></EditOption>
 			</div>
 			<h1 className="min-h-64 px-5 py-3">{post?.content}</h1>
-			<Image
-				src={post?.image}
-				width={815}
-				height={400}
-				alt="Posted Image"
-				className="object-contain border"
-			/>
+
+			{post?.image && (
+				<Image
+					src={post?.image}
+					width={815}
+					height={400}
+					alt="Posted Image"
+					className="object-contain border w-full"
+				/>
+			)}
 			<div className="flex justify-end px-5 py-3 ">
 				<div className="flex gap-3">
 					<BsSave
@@ -108,14 +121,11 @@ const SinglePost = ({ post, router }) => {
 					/>
 					{react ? (
 						<AiFillHeart
-							// onClick={handleReact}
-							// onClick={() => setReact(!react)}
 							size={28}
 							className="hover:scale-125 duration-300 hover:text-red-400 hover:cursor-pointer text-red-500"
 						/>
 					) : (
 						<AiOutlineHeart
-							// onClick={() => setReact(!react)}
 							onClick={handleReact}
 							size={28}
 							className="hover:scale-125 duration-300 hover:text-gray-400 hover:cursor-pointer"

@@ -15,8 +15,19 @@ export const GET = async () => {
 	}
 };
 
+export const DELETE = async (request) => {
+	// const { id } = await request.json();
+	try {
+		const id = request.nextUrl.searchParams.get('id');
+		await connect();
+		await Post.findByIdAndDelete(id);
+		return NextResponse.json({ message: 'Post deleted' }, { status: 200 });
+	} catch (error) {
+		JSON.stringify({ message: 'Internal server error' }, { status: 500 });
+	}
+};
 
-export const PATCH = async(request) => {
+export const PATCH = async (request) => {
 	try {
 		const { id, comment, reaction } = await request.json();
 		await connect();
@@ -88,4 +99,4 @@ export const PATCH = async(request) => {
 			JSON.stringify({ message: 'Internal server error' }, { status: 500 })
 		);
 	}
-}
+};

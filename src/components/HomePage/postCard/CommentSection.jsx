@@ -6,7 +6,6 @@ const CommentSection = ({ id, open }) => {
 	const { register, handleSubmit, setValue, watch, reset } = useForm();
 	const watchComment = watch('comment', '');
 
-
 	const onSubmit = (data) => {
 		if (data.comment.trim() !== '') {
 			reset();
@@ -16,26 +15,24 @@ const CommentSection = ({ id, open }) => {
 			id,
 			author: {
 				name: '',
-				profile_picture:
-					'',
+				profile_picture: '',
 			},
 			comment: data.comment,
 		};
 		console.log(comment);
 
-		fetch('http://localhost:3000/api/posts', {
+		fetch('https://feed-silk.vercel.app/api/posts', {
 			method: 'PATCH',
 			headers: {
 				'content-type': 'application/json',
 			},
 			body: JSON.stringify(comment),
 		})
-		
 			.then((res) => {
 				if (!res.ok) {
 					throw new Error('Network response was not ok');
 				}
-				
+
 				return res.json();
 			})
 			.then((data) => {
@@ -44,9 +41,8 @@ const CommentSection = ({ id, open }) => {
 			.catch((error) => {
 				console.error('Fetch error:', error);
 			});
-			
 	};
-	
+
 	return (
 		<div className={`${open ? '' : 'hidden'}`}>
 			<form className="flex relative" onSubmit={handleSubmit(onSubmit)}>

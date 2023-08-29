@@ -13,7 +13,7 @@ const SinglePost = ({ post }) => {
 	const [open, setOpen] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
 	const { _id: id } = post;
-	
+
 	// const comments = comments[]
 	function closeModal() {
 		setIsOpen(false);
@@ -35,7 +35,7 @@ const SinglePost = ({ post }) => {
 		};
 		console.log(reaction);
 
-		fetch('http://localhost:3000/api/posts', {
+		fetch('https://feed-silk.vercel.app/api/posts', {
 			method: 'PATCH',
 			headers: {
 				'content-type': 'application/json',

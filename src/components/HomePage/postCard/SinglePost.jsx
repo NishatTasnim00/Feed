@@ -13,9 +13,7 @@ const SinglePost = ({ post }) => {
 	const [open, setOpen] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
 	const { _id: id } = post;
-	console.log(post.comments);
-	const { comments } = post;
-	console.log(comments)
+	
 	// const comments = comments[]
 	function closeModal() {
 		setIsOpen(false);

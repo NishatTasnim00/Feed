@@ -20,8 +20,7 @@ const reactionSchema = new Schema(
 			email: String,
 			name: String,
 			profile_picture: String,
-		},
-		// reaction: Array
+		}
 	},
 	{ timestamps: true }
 );

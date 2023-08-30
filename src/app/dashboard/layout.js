@@ -11,9 +11,10 @@ const dashBoardLayout = ({ children }) => {
 				</div>
 				<div className="grid col-span-10 ">
 					<TopBar></TopBar>
+					{children}
 				</div>
 
-				<div className="grid col-span-10">{children}</div>
+				{/* <div className="grid col-span-10">{children}</div> */}
 			</div>
 		</>
 	);

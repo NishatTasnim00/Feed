@@ -6,12 +6,13 @@ const dashBoardLayout = ({ children }) => {
 	return (
 		<>
 			<div className="grid lg:grid-cols-12">
-				<div className="grid col-span-12">
-					<TopBar></TopBar>
-				</div>
 				<div className="grid col-span-2">
 					<Sidebar></Sidebar>
 				</div>
+				<div className="grid col-span-10 ">
+					<TopBar></TopBar>
+				</div>
+
 				<div className="grid col-span-10">{children}</div>
 			</div>
 		</>

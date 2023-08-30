@@ -1,21 +1,21 @@
 import UsersRow from '@/components/Dashboard/Users/UsersRow';
-import React from 'react'
+import React from 'react';
 
 const Users = () => {
+	const fetcher = (...args) => fetch(...args).then((res) => res.json());
+	const {
+		data: users,
+		error,
+		isLoading,
+	} = useSWR('/api/users', fetcher, {
+		refreshInterval: 1000,
+	});
+	console.log(users);
 
-
-   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-		const {
-			data: users,
-			error,
-			isLoading,
-		} = useSWR('/api/users', fetcher, {
-			refreshInterval: 1000,
-		});
-console.log(users)
-		if (error) return <div>failed to load</div>;
-		if (isLoading) return <div>loading...</div>;
-  return (
+  
+	if (error) return <div>failed to load</div>;
+	if (isLoading) return <div>loading...</div>;
+	return (
 		<div className="container">
 			<div className="overflow-x-auto">
 				<table className="table">
@@ -37,13 +37,13 @@ console.log(users)
 							// 	paidClass={paidClass}
 							// 	index={index}
 							// ></PaymentTableRow>
-              <UsersRow key={Users._id}></UsersRow>
+							<UsersRow key={Users._id}></UsersRow>
 						))}
 					</tbody>
 				</table>
 			</div>
 		</div>
 	);
-}
+};
 
-export default Users
+export default Users;

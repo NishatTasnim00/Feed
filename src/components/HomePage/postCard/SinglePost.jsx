@@ -23,7 +23,12 @@ const SinglePost = ({ post }) => {
 		setIsOpen(true);
 	}
 
-	const handleReact = () => {
+	const handleRemoveReaction = ()=>{
+
+
+	}
+
+	const handleReaction = () => {
 		setReact(!react);
 		const reaction = {
 			id,
@@ -110,12 +115,13 @@ const SinglePost = ({ post }) => {
 					/>
 					{react ? (
 						<AiFillHeart
+							onClick={() => handleRemoveReaction('tasnim@gmail.com')}
 							size={28}
 							className="hover:scale-125 duration-300 hover:text-red-400 hover:cursor-pointer text-red-500"
 						/>
 					) : (
 						<AiOutlineHeart
-							onClick={handleReact}
+							onClick={handleReaction}
 							size={28}
 							className="hover:scale-125 duration-300 hover:text-gray-400 hover:cursor-pointer"
 						/>

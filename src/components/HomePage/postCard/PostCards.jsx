@@ -30,7 +30,7 @@ const PostCards = () => {
 
 	return (
 		<>
-			<div className="pb-28 pt-12 mx-auto w-full h-screen">
+			<div className="pb-28 pt-12 mx-auto w-full">
 				{posts &&
 					posts
 						?.reverse()

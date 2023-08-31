@@ -8,7 +8,7 @@ import { BsPersonWorkspace } from 'react-icons/bs';
 import { FaUsersGear } from 'react-icons/fa6';
 import { MdSpaceDashboard } from 'react-icons/md';
 import { TiThMenu } from 'react-icons/ti';
-import './sidebar.module.css';
+
 
 const Sidebar = () => {
   const [isRotated, setIsRotated] = useState(false);

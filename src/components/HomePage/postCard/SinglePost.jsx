@@ -62,7 +62,10 @@ const SinglePost = ({ post }) => {
 	};
 
 	return (
-		<div data-aos="fade-up" className="lg:px-0 border-2 rounded-md mb-3">
+		<div
+			data-aos="fade-up"
+			className="lg:px-0 border-2 rounded-md mb-3"
+		>
 			<div className="w-full flex items-center justify-between p-2">
 				<div className="flex items-center">
 					<Image
@@ -87,15 +90,15 @@ const SinglePost = ({ post }) => {
 					isOpen={isOpen}
 				></EditOption>
 			</div>
-			<h1 className="min-h-64 px-5 py-3">{post?.content}</h1>
-
+			<h1 className="px-5 py-3">{post?.content}</h1>
+			{/* <h1 className="min-h-64 px-5 py-3">{post?.content}</h1> */}
 			{post?.image && (
 				<Image
 					src={post?.image}
-					width={815}
-					height={400}
+					width={600}
+					height={500}
 					alt="Posted Image"
-					className="object-contain border w-full"
+					className="object-contain border w-full h-[600px]" //object-contain
 				/>
 			)}
 			<div className="flex justify-end px-5 py-3 ">

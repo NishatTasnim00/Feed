@@ -71,7 +71,7 @@ const toggleLinks = () => {
           </li>
           <li className={`link-item ${showLinks ? 'show' : ''}`}>
             <Link href={"/dashboard/users"}>
-              <div className='flex gap-4'>
+              <div className='flex gap-4 tooltip' data-tip="Users">
                 <FaUsersGear size={26} />
                 {showLinks && <span>Users</span>}
               </div>

@@ -44,7 +44,7 @@ const toggleLinks = () => {
     <>
       <div
         ref={menuRef}
-        className={`glass mx-auto min-h-screen  pl-5 relative pt-8 pr-12 ${
+        className={`glass mx-auto pl-5 relative pt-8 pr-12 ${
           showLinks ? 'expanded' : ''
         }`}
       >
@@ -57,13 +57,13 @@ const toggleLinks = () => {
   }}
 />
         <ul
-             className={`flex flex-col gap-8 mt-16 ml-6 ${
+             className={`flex min-h-fit flex-col gap-8 mt-16 ml-6 ${
               showLinks ? 'show' : ''
             }`}
         >
           <li className={`link-item ${showLinks ? 'show' : ''}`}>
             <Link href={"/"}>
-              <div className='flex gap-4'>
+              <div className='flex gap-4 tooltip' data-tip="Home">
                 <FaHome size={26} />
                 {showLinks && <span>Home</span>}
               </div>

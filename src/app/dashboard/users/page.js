@@ -17,8 +17,8 @@ const Users = () => {
 	if (error) return <div>failed to load</div>;
 	if (isLoading) return <div>loading...</div>;
 	return (
-		<div className="w-10/12 px-7 pt-0">
-			<div className="bg-gray-300 w-3/12 text-2xl p-2 rounded-md mb-5">
+		<div className="w-10/12 glass px-7 pt-8 rounded-2xl z-0">
+			<div className="border  w-3/12 text-2xl z-0	 p-2 rounded-md mb-5">
 				<h1 className="">Total User: {users?.length}</h1>
 			</div>
 

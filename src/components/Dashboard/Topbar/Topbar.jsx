@@ -6,7 +6,7 @@ import { AiOutlinePlusCircle, AiOutlineShareAlt } from 'react-icons/ai';
 const TopBar = () => {
 	return (
 		<>
-			<div className="h-20 bg-slate-400 px-16 flex justify-end items-center ">
+			<div className="h-20 glass  px-16 flex justify-end items-center ">
 				<div >
 					<div className="group relative hidden h-full w-full items-center md:flex lg:w-64">
 						<div className="absolute flex cursor-pointer items-center justify-center p-3 pr-2 text-sm uppercase text-gray-500 sm:hidden">

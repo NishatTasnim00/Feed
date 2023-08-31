@@ -1,16 +1,25 @@
 import Sidebar from '@/components/Dashboard/Sidebar/Sidebar';
+<<<<<<< HEAD
+=======
+
+>>>>>>> c31c44be8fe8938514804c4abc1c77d94a885c84
 import TopBar from '@/components/Dashboard/Topbar/Topbar';
 import React from 'react';
 
 const dashBoardLayout = ({ children }) => {
 	return (
 		<>
-			<div className="grid lg:grid-cols-12">
-				<div className="grid col-span-2">
+			<div className="layout grid lg:grid-cols-12 z-50 ">
+				<div className="grid col-span-1  mr-12 ">
 					<Sidebar></Sidebar>
 				</div>
-				<div className="grid col-span-10 ">
+				<div className="grid col-span-11 z-10 ">
 					<TopBar></TopBar>
+<<<<<<< HEAD
+=======
+					
+					
+>>>>>>> c31c44be8fe8938514804c4abc1c77d94a885c84
 					{children}
 				</div>
 

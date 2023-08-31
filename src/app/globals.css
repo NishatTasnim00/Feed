@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.name{
+    font-family:Segoe Print;
+}
+.sidebar{
+    background: rgb(28,27,57);
+background: linear-gradient(90deg, rgba(28,27,57,0.3617822128851541) 0%, rgba(6,26,79,0.36458333333333337) 35%, rgba(128,149,153,0.20211834733893552) 100%);
+}
+
+
+
+.link-item {
+    
+   
+    transition-duration: 1000ms;
+  }
+  
+  .show .link-item {
+    
+    opacity: 1;
+  }
+  .menu-icon {
+    transition: transform 0.3s ease; /* Adjust the duration (0.3s) for the animation speed */
+  }
+
+  .layout{
+    background: rgb(37,48,253);
+background: linear-gradient(90deg, rgba(37,48,253,0.5466561624649859) 60%, rgba(51,92,253,1) 77%, rgba(252,176,69,1) 100%);
+  }

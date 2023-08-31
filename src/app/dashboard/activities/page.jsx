@@ -57,37 +57,37 @@ const data = [
 
 const data1 = [
   {
-    subject: 'Math',
+    subject: 'January',
     A: 120,
     B: 110,
     fullMark: 150,
   },
   {
-    subject: 'Chinese',
+    subject: 'february',
     A: 98,
     B: 130,
     fullMark: 150,
   },
   {
-    subject: 'English',
+    subject: 'March',
     A: 86,
     B: 130,
     fullMark: 150,
   },
   {
-    subject: 'Geography',
+    subject: 'April',
     A: 99,
     B: 100,
     fullMark: 150,
   },
   {
-    subject: 'Physics',
+    subject: 'May',
     A: 85,
     B: 90,
     fullMark: 150,
   },
   {
-    subject: 'History',
+    subject: 'June',
     A: 65,
     B: 85,
     fullMark: 150,
@@ -185,12 +185,12 @@ const data3 = [
   },
 ];
 
-const style = {
-  top: '50%',
-  right: 0,
-  transform: 'translate(0, -50%)',
-  lineHeight: '24px',
-};
+// const style = {
+//   top: '50%',
+//   right: 0,
+//   transform: 'translate(0, -50%)',
+//   lineHeight: '24px',
+// };
 
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -206,12 +206,12 @@ const style = {
         <div className=''><Loading /></div>
       ) : (
         <div className='mb-80'>
-          <p className='text-4xl text-center name font-bold'>Welcome to Picxabee</p>
+          <p className='text-4xl text-center name mt-4 font-bold'>Users Activities</p>
           {/* Chart */}
-         <div className='flex  mt-12'>
-          <div className=' '>
+         <div className='flex flex-col   mt-12 gap-8'>
+          <div className='flex gap-8 mx-auto'>
             
-     <div className='shadow-slate-600 shadow-lg w-full h-full py-10   glass rounded-2xl' style={{ width: 500, height: 300 }}>
+     <div className='shadow-slate-600 shadow-lg  py-10   glass rounded-2xl' style={{ width: 550, height: 350 }}>
       <p className='text-center  font-bold text-xl '>Users Per Month</p>
         <ResponsiveContainer>
           <ComposedChart
@@ -236,21 +236,26 @@ const style = {
           </ComposedChart>
         </ResponsiveContainer>
       </div>
-      </div>
-        
-          
-            <div  className='shadow-slate-600 shadow-lg  py-10   glass rounded-2xl' style={{ width: 1000, height: 300 }} >
+      <div  className='shadow-slate-600 shadow-lg  py-10   glass rounded-2xl' style={{ width: 550, height: 350 }} >
+        <p className='text-center  font-bold text-xl '>Posts Per Month</p>
             <ResponsiveContainer className=" " width="100%" height="100%">
               
               <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data1}>
                 <PolarGrid />
+                <Tooltip />
+                <Legend />
                 <PolarAngleAxis dataKey="subject" />
                 <PolarRadiusAxis />
-                <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                <Radar className='' name="users" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
               </RadarChart>
             </ResponsiveContainer>
             </div>
-         <div className='shadow-slate-600 shadow-lg w-full h-full py-10   glass rounded-2xl' >
+      </div>
+        
+          
+            
+        {/* <div className='flex gap-8 mx-auto'>
+        <div className='shadow-slate-600 shadow-lg  py-10   glass rounded-2xl' style={{ width: 550, height: 350 }}>
          <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={data2}>
           <RadialBar
@@ -265,6 +270,7 @@ const style = {
       </ResponsiveContainer>
          </div>
           
+          <div className='shadow-slate-600 shadow-lg w-full h-full py-10   glass rounded-2xl' style={{ width: 550, height: 350 }}>
           <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}
@@ -287,6 +293,8 @@ const style = {
           <Bar yAxisId="right" dataKey="uv" fill="#82ca9d" />
         </BarChart>
       </ResponsiveContainer>
+          </div>
+        </div> */}
           
           
          </div>

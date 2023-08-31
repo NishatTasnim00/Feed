@@ -57,9 +57,10 @@ const toggleLinks = () => {
   }}
 />
         <ul 
-        
+
              className={`flex min-h-fit flex-col gap-8 mt-16 ml-6 ${
               showLinks ? 'show' : ''
+              
             }`}
         >
           <li className={`link-item ${showLinks ? 'show' : ''}`}>

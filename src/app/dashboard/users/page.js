@@ -12,7 +12,7 @@ const Users = (props) => {
 
 	if (error) return <div>failed to load</div>;
 	if (isLoading) return ( <div className='mx-auto  '>
-		<DotLoader color="#9a45db"   />
+		<DotLoader className='mx-auto' size={100} color="#9a45db"   />
 	</div>);
 	return (
 		<div className="w-10/12 mb-60 ml-auto mr-28 glass px-7 pt-8 mt-20 rounded-2xl z-0">

@@ -1,5 +1,4 @@
 import Sidebar from '@/components/Dashboard/Sidebar/Sidebar';
-import TopBarr from '@/components/Dashboard/Topbar/TopBarr';
 import TopBar from '@/components/Dashboard/Topbar/Topbar';
 import React from 'react';
 
@@ -12,9 +11,6 @@ const dashBoardLayout = ({ children }) => {
 				</div>
 				<div className="grid col-span-10 ">
 					<TopBar></TopBar>
-					<br />
-					<br />
-					<TopBarr></TopBarr>
 					{children}
 				</div>
 

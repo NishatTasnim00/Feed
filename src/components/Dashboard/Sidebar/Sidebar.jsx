@@ -81,7 +81,7 @@ const toggleLinks = () => {
           </li>
           <li className={`link-item ${showLinks ? 'show' : ''}`}>
             <Link href={"/dashboard/activities"}>
-              <div className='flex gap-4'>
+              <div className='flex gap-4 tooltip' data-tip="Activities">
                 <BsPersonWorkspace size={26} />
                 {showLinks && <span>Activities</span>}
               </div>
@@ -89,7 +89,7 @@ const toggleLinks = () => {
           </li>
           <li className={`link-item ${showLinks ? 'show' : ''}`}>
             <Link href={"/dashboard"}>
-              <div className='flex gap-4'>
+              <div className='flex gap-4 tooltip' data-tip="Dashboard">
                 <MdSpaceDashboard size={26} />
                 {showLinks && <span>Dashboard</span>}
               </div>

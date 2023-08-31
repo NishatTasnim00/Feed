@@ -28,5 +28,14 @@ background: linear-gradient(90deg, rgba(28,27,57,0.3617822128851541) 0%, rgba(6,
 
   .layout{
     background: rgb(40,74,235);
-background: linear-gradient(90deg, rgba(40,74,235,0.6979166666666667) 4%, rgba(4,131,238,0.5130427170868348) 47%, rgba(169,63,217,0.8015581232492998) 100%);
+background: linear-gradient(90deg,
+ rgba(40,74,235,0.6979166666666667) 4%,
+  rgba(4,131,238,0.5130427170868348) 47%,
+   rgba(169,63,217,0.8015581232492998) 100%);
   }
+
+  .placeholder-white::placeholder {
+    color: white;
+  }
+
+  

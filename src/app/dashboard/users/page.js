@@ -17,7 +17,11 @@ const Users = () => {
 	if (error) return <div>failed to load</div>;
 	if (isLoading) return <div>loading...</div>;
 	return (
-		<div className="w-10/12 p-7">
+		<div className="w-10/12 px-7 pt-0">
+			<div className="bg-gray-300 w-3/12 text-2xl p-2 rounded-md mb-5">
+				<h1 className="">Total User: {users?.length}</h1>
+			</div>
+
 			<div className="overflow-x-auto">
 				<table className="table">
 					{/* head */}
@@ -27,16 +31,17 @@ const Users = () => {
 							<th className="w-3/12">User</th>
 							<th className="">Role</th>
 							<th>Joined</th>
-              <th>Status</th>
-              <th>Edit</th>
+							<th>Status</th>
+							<th>Edit</th>
 						</tr>
 					</thead>
 					<tbody>
 						{/* row 1 */}
 
-						{users?.map((user, index) => (
-							<UsersRow key={user._id} user={user} index={index}></UsersRow>
-						))}
+						{users &&
+							users?.map((user, index) => (
+								<UsersRow key={user._id} user={user} index={index}></UsersRow>
+							))}
 					</tbody>
 				</table>
 			</div>

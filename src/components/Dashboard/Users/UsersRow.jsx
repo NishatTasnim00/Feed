@@ -1,7 +1,7 @@
 import React from 'react';
 
 const UsersRow = ({ user, index }) => {
-	console.log(user);
+	// console.log(user);
 
 	const date1 = new Date(user.createdAt);
 	// const options = { dateStyle: 'long', timeStyle: 'medium' };
@@ -16,9 +16,23 @@ const UsersRow = ({ user, index }) => {
 				<td>User</td>
 				<td>{formattedDateTime}</td>
 				<td>
-					<button className="btn btn-sm bg-primary hover:bg-primary text-xs capitalize">Active</button>
+					<button className="btn btn-sm bg-green-400 hover:bg-primary text-xs capitalize">
+						Active
+					</button>
 				</td>
-                <td>Edit</td>
+				<td>
+					<details className="dropdown">
+						<summary className="">User</summary>
+						<ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-md">
+							<li>
+								<a>Admin</a>
+							</li>
+							<li>
+								<a>User</a>
+							</li>
+						</ul>
+					</details>
+				</td>
 			</tr>
 		</>
 	);

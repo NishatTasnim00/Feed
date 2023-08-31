@@ -99,8 +99,8 @@ const toggleLinks = () => {
           
         </ul>
         <div className='absolute bottom-4 '>
-        <Link href={"/dashboard"} className="group">
-      <div className="text-center group-hover:scale-105 transform transition-transform duration-300">
+        <Link href={"/"} className="group">
+      <div className="text-center group-hover:animate-pulse group-hover:scale-105 transform transition-transform duration-300">
         <Image
           className="mx-auto"
           height={"55"}

@@ -1,6 +1,4 @@
-'use client';
-import useSWR from 'swr';
-import Image from 'next/image';
+import React from 'react'
 
 const FeedbackPage = () => {
 	const fetcher = (...args) => fetch(...args).then((res) => res.json());

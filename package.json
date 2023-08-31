@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "apexcharts": "^3.42.0",
+    "apexcharts": "^3.42.0",
     "autoprefixer": "10.4.15",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
@@ -23,8 +24,8 @@
     "react-icons": "^4.10.1",
     "react-loading-skeleton": "^3.3.1",
     "react-spinners": "^0.13.8",
-    "swr": "^2.2.2",
     "recharts": "^2.8.0",
+    "swr": "^2.2.1",
     "tailwindcss": "3.3.3"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 'use client';
-import UsersRow from '@/components/Dashboard/users/UsersRow';
+import UserRow from '@/components/Dashboard/users/UserRow';
 import React from 'react';
 import useSWR from 'swr';
 
@@ -40,7 +40,8 @@ const Users = () => {
 
 						{users &&
 							users?.map((user, index) => (
-								<UsersRow key={user._id} user={user} index={index}></UsersRow>
+								
+								<UserRow key={user._id} user={user} index={index}></UserRow>
 							))}
 					</tbody>
 				</table>

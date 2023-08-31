@@ -1,8 +1,4 @@
 import Sidebar from '@/components/Dashboard/Sidebar/Sidebar';
-<<<<<<< HEAD
-=======
-
->>>>>>> c31c44be8fe8938514804c4abc1c77d94a885c84
 import TopBar from '@/components/Dashboard/Topbar/Topbar';
 import React from 'react';
 
@@ -15,11 +11,8 @@ const dashBoardLayout = ({ children }) => {
 				</div>
 				<div className="grid col-span-11 z-10 ">
 					<TopBar></TopBar>
-<<<<<<< HEAD
-=======
 					
 					
->>>>>>> c31c44be8fe8938514804c4abc1c77d94a885c84
 					{children}
 				</div>
 

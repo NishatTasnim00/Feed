@@ -3,15 +3,15 @@ import UserRow from '@/components/Dashboard/Users/UserRow';
 import React from 'react';
 import useSWR from 'swr';
 import { DotLoader } from 'react-spinners'
-// import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+
 const Users = (props) => {
 	const fetcher = (...args) => fetch(...args).then((res) => res.json());
-	const { data:users, error, isLoading } = useSWR('/api/users', fetcher);
+	const { data: users, error, isLoading } = useSWR('/api/users', fetcher);
 	// console.log(users);
 
 	if (error) return <div>failed to load</div>;
-	if (isLoading) return ( <div className='mx-auto  '>
+	if (isLoading) return ( <div className='mx-auto'>
 		<DotLoader color="#9a45db"   />
 	</div>);
 	return (

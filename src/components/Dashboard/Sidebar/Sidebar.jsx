@@ -41,73 +41,81 @@ const toggleLinks = () => {
 
 
   return (
-    <>
-      <div
-        ref={menuRef}
-        className={`glass mx-auto pl-5 relative pt-8 pr-12 ${
-          showLinks ? 'expanded' : ''
-        }`}
-      >
-      <TiThMenu
-  className={`cursor-pointer ml-6 menu-icon ${showLinks ? 'rotate' : ''}`}
-  size={30}
-  onClick={toggleLinks}
-  style={{
-    transform: `rotate(${isRotated ? 180 : 0}deg)`, // Rotate based on isRotated state
-  }}
-/>
-        <ul 
-
-             className={`flex min-h-fit flex-col gap-8 mt-16 ml-6 ${
-              showLinks ? 'show' : ''
-              
-            }`}
-        >
-          <li className={`link-item ${showLinks ? 'show' : ''}`}>
-            <Link href={"/"}>
-              <div className='flex gap-4 tooltip' data-tip="Home">
-                <FaHome size={26} />
-                {showLinks && <span>Home</span>}
-              </div>
-            </Link>
-          </li>
-          <li className={`link-item ${showLinks ? 'show' : ''}`}>
-            <Link href={"/dashboard/users"}>
-              <div className='flex gap-4 tooltip' data-tip="Users">
-                <FaUsersGear size={26} />
-                {showLinks && <span>Users</span>}
-              </div>
-            </Link>
-          </li>
-          <li className={`link-item ${showLinks ? 'show' : ''}`}>
-            <Link href={"/dashboard/activities"}>
-              <div className='flex gap-4 tooltip' data-tip="Activities">
-                <BsPersonWorkspace size={26} />
-                {showLinks && <span>Activities</span>}
-              </div>
-            </Link>
-          </li>
-          <li className={`link-item ${showLinks ? 'show' : ''}`}>
-            <Link href={"/dashboard"}>
-              <div className='flex gap-4 tooltip' data-tip="Dashboard">
-                <MdSpaceDashboard size={26} />
-                {showLinks && <span>Dashboard</span>}
-              </div>
-            </Link>
-          </li>
-        </ul>
-        <div className='absolute bottom-4 '>
-          <Image
-            className='mx-auto'
-            height={"55"}
-            width={"55"}
-            src={"https://i.ibb.co/34ZRTbb/swarm.png"}
-          />
-          <p className='text-center name'>Picxabee</p>
-        </div>
-      </div>
-    </>
-  );
+		<>
+			<div
+				ref={menuRef}
+				className={`glass mx-auto pl-5 relative pt-8 pr-12 ${
+					showLinks ? 'expanded' : ''
+				}`}
+			>
+				<TiThMenu
+					className={`cursor-pointer ml-6 menu-icon ${
+						showLinks ? 'rotate' : ''
+					}`}
+					size={30}
+					onClick={toggleLinks}
+					style={{
+						transform: `rotate(${isRotated ? 180 : 0}deg)`, // Rotate based on isRotated state
+					}}
+				/>
+				<ul
+					className={`flex min-h-fit flex-col gap-8 mt-16 ml-6 ${
+						showLinks ? 'show' : ''
+					}`}
+				>
+					<li className={`link-item ${showLinks ? 'show' : ''}`}>
+						<Link href={'/'}>
+							<div className="flex gap-4 tooltip" data-tip="Home">
+								<FaHome size={26} />
+								{showLinks && <span>Home</span>}
+							</div>
+						</Link>
+					</li>
+					<li className={`link-item ${showLinks ? 'show' : ''}`}>
+						<Link href="/dashboard/users">
+							<div className="flex gap-4 tooltip" data-tip="Users">
+								<FaUsersGear size={26} />
+								{showLinks && <span>Users</span>}
+							</div>
+						</Link>
+					</li>
+					<li className={`link-item ${showLinks ? 'show' : ''}`}>
+						<Link href="/dashboard/activities">
+							<div className="flex gap-4 tooltip" data-tip="Activities">
+								<BsPersonWorkspace size={26} />
+								{showLinks && <span>Activities</span>}
+							</div>
+						</Link>
+					</li>
+					<li className={`link-item ${showLinks ? 'show' : ''}`}>
+						<Link href="/dashboard/feedback">
+							<div className="flex gap-4 tooltip" data-tip="Activities">
+								<BsPersonWorkspace size={26} />
+								{showLinks && <span>Activities</span>}
+							</div>
+						</Link>
+					</li>
+					<li className={`link-item ${showLinks ? 'show' : ''}`}>
+						<Link href={'/dashboard'}>
+							<div className="flex gap-4 tooltip" data-tip="Dashboard">
+								<MdSpaceDashboard size={26} />
+								{showLinks && <span>Dashboard</span>}
+							</div>
+						</Link>
+					</li>
+				</ul>
+				<div className="absolute bottom-4 ">
+					<Image
+						className="mx-auto"
+						height={'55'}
+						width={'55'}
+						src={'https://i.ibb.co/34ZRTbb/swarm.png'}
+					/>
+					<p className="text-center name">Picxabee</p>
+				</div>
+			</div>
+		</>
+	);
 };
 
 export default Sidebar;

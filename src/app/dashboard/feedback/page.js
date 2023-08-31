@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import React from 'react'
+import useSWR from 'swr';
 
 const FeedbackPage = () => {
 	const fetcher = (...args) => fetch(...args).then((res) => res.json());

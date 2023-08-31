@@ -32,7 +32,7 @@ const Users = () => {
 					<tbody>
 						{/* row 1 */}
 
-						{data &&
+						{users &&
 							users?.map((user, index) => (
 								<UserRow key={user._id} user={user} index={index}></UserRow>
 							))}

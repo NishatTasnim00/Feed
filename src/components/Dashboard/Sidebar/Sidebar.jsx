@@ -56,7 +56,8 @@ const toggleLinks = () => {
     transform: `rotate(${isRotated ? 180 : 0}deg)`, // Rotate based on isRotated state
   }}
 />
-        <ul
+        <ul 
+        
              className={`flex min-h-fit flex-col gap-8 mt-16 ml-6 ${
               showLinks ? 'show' : ''
             }`}

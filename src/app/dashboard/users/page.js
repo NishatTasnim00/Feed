@@ -9,9 +9,7 @@ const Users = () => {
 		data: users,
 		error,
 		isLoading,
-	} = useSWR('/api/users', fetcher, {
-		refreshInterval: 1000,
-	});
+	} = useSWR('/api/users', fetcher);
 	console.log(users);
 
 	if (error) return <div>failed to load</div>;

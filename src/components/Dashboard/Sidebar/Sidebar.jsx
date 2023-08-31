@@ -8,6 +8,7 @@ import { BsPersonWorkspace } from 'react-icons/bs';
 import { FaUsersGear } from 'react-icons/fa6';
 import { MdSpaceDashboard } from 'react-icons/md';
 import { TiThMenu } from 'react-icons/ti';
+import { MdFeedback } from 'react-icons/md';
 
 
 const Sidebar = () => {
@@ -64,10 +65,10 @@ const toggleLinks = () => {
             }`}
         >
           <li className={`link-item ${showLinks ? 'show' : ''}`}>
-            <Link href={"/"}>
-              <div className='flex gap-4 tooltip' data-tip="Home">
-                <FaHome size={26} />
-                {showLinks && <span>Home</span>}
+            <Link href={"/dashboard"}>
+              <div className='flex gap-4 tooltip' data-tip="Dashboard">
+                <MdSpaceDashboard size={26} />
+                {showLinks && <span>Dashboard</span>}
               </div>
             </Link>
           </li>
@@ -88,22 +89,27 @@ const toggleLinks = () => {
             </Link>
           </li>
           <li className={`link-item ${showLinks ? 'show' : ''}`}>
-            <Link href={"/dashboard"}>
-              <div className='flex gap-4 tooltip' data-tip="Dashboard">
-                <MdSpaceDashboard size={26} />
-                {showLinks && <span>Dashboard</span>}
+            <Link href={"/dashboard/feedback"}>
+              <div className='flex gap-4 tooltip' data-tip="Feedback">
+                <MdFeedback size={26} />
+                {showLinks && <span>Feedback</span>}
               </div>
             </Link>
           </li>
+          
         </ul>
         <div className='absolute bottom-4 '>
-          <Image
-            className='mx-auto'
-            height={"55"}
-            width={"55"}
-            src={"https://i.ibb.co/34ZRTbb/swarm.png"}
-          />
-          <p className='text-center name'>Picxabee</p>
+        <Link href={"/dashboard"} className="group">
+      <div className="text-center group-hover:scale-105 transform transition-transform duration-300">
+        <Image
+          className="mx-auto"
+          height={"55"}
+          width={"55"}
+          src={"https://i.ibb.co/34ZRTbb/swarm.png"}
+        />
+        <p className="text-center name">Picxabee</p>
+      </div>
+    </Link>
         </div>
       </div>
     </>

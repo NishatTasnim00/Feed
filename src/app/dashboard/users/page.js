@@ -1,7 +1,7 @@
 'use client';
 import useSWR from 'swr';
 import { DotLoader } from 'react-spinners'
-import UserRow from '@/components/Dashboard/users/UserRow';
+import UserRow from '@/components/Dashboard/Users/UserRow';
 
 const Users = () => {
 	const fetcher = (...args) => fetch(...args).then((res) => res.json());

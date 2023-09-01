@@ -10,12 +10,9 @@ const FeedbackPage = () => {
 		refreshInterval: 1000,
 	});
 	console.log(feedbacks);
-	// const { createdAt } = feedbacks;
-	// console.log(createdAt);
+	
 
-	// const inputDate = new Date(feedbacks?.createdAt);
-	// const options = { dateStyle: 'long', timeStyle: 'medium' };
-	// const formattedDateTime = inputDate.toLocaleString(undefined, options);
+	
 
 	// console.log(formattedDateTime);
 	const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +22,12 @@ const FeedbackPage = () => {
       setIsLoading(false);
     }, 2000); // Simulated 2-second delay
   }, []);
+	const formatDate = (createdAt) => {
+		const inputDate = new Date(createdAt);
+		const options = { dateStyle: 'long', timeStyle: 'medium' };
+		const formattedDateTime = inputDate.toLocaleString(undefined, options);
+		return formattedDateTime;
+	};
 
 	return (
 		<div className="w-10/12 mb-60 ml-auto mr-20 pt-8 mt-20 z-0">
@@ -51,7 +54,9 @@ const FeedbackPage = () => {
 									<p className="font-semibold capitalize">
 										{feedback?.author?.name}
 									</p>
-									{/* <p className="font-light">{formattedDateTime}</p> */}
+									<p className="font-light text-sm">
+										{formatDate(feedback?.createdAt)}
+									</p>
 								</div>
 							</div>
 						</div>

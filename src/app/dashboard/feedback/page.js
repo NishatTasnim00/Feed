@@ -29,7 +29,7 @@ const FeedbackPage = () => {
 						className="collapse collapse-arrow join-item border border-base-300"
 					>
 						<input type="radio" name="my-accordion-4" checked="checked" />
-						<div className="collapse-title text-xl font-medium">
+						<div className="glass collapse-title text-xl font-medium">
 							<div className="flex items-center">
 								<Image
 									src={feedback?.author?.profile_picture}

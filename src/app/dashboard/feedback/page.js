@@ -1,7 +1,8 @@
 "use client"
 import Image from 'next/image';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import useSWR from 'swr';
+import Loading from '../activities/loading';
 
 const FeedbackPage = () => {
 	const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -17,10 +18,20 @@ const FeedbackPage = () => {
 	// const formattedDateTime = inputDate.toLocaleString(undefined, options);
 
 	// console.log(formattedDateTime);
+	const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    // Simulate an asynchronous operation (e.g., fetching data)
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Simulated 2-second delay
+  }, []);
 
 	return (
 		<div className="w-10/12 mb-60 ml-auto mr-20 pt-8 mt-20 z-0">
-			<div>
+			{
+				isLoading ? <><Loading/></>
+				:
+				<><div>
 				{feedbacks?.map((feedback) => (
 					<div
 						key={feedback._id}
@@ -49,7 +60,10 @@ const FeedbackPage = () => {
 						</div>
 					</div>
 				))}
-			</div>
+			</div></>
+			}
+			
+			
 		</div>
 	);
 };

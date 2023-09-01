@@ -4,6 +4,7 @@ import React from 'react';
 import useSWR from 'swr';
 import { DotLoader } from 'react-spinners'
 import 'react-loading-skeleton/dist/skeleton.css'
+import Loading from '../activities/loading';
 
 const Users = (props) => {
 	const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -12,7 +13,7 @@ const Users = (props) => {
 
 	if (error) return <div>failed to load</div>;
 	if (isLoading) return ( <div className='mx-auto  '>
-		<DotLoader className='mx-auto' size={100} color="#9a45db"   />
+		<Loading/>
 	</div>);
 	return (
 		<div className="w-10/12 mb-60 ml-auto mr-28 glass px-7 pt-8 mt-20 rounded-2xl z-0">
